@@ -29,4 +29,8 @@ public class Celda {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
 }
