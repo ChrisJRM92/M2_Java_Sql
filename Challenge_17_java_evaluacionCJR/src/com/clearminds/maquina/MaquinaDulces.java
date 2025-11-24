@@ -52,7 +52,7 @@ public class MaquinaDulces {
         }else{
             System.out.println("Nombre: "+this.celda1.getProducto().getNombre());
             System.out.println("Precio: "+this.celda1.getProducto().getPrecio());
-            System.out.println("Codigo: "+this.celda2.getProducto().getCodigo());
+            System.out.println("Codigo: "+this.celda1.getProducto().getCodigo());
         }
 
         System.out.println("***********CELDA " + this.celda2.getCodigo());
@@ -136,27 +136,27 @@ public class MaquinaDulces {
 
     public void vender(String codigo){
         Producto productoEncontrado = buscarProductoEnCelda(codigo);
-        if(productoEncontrado != null && this.celda1.getProducto().getNombre() == productoEncontrado.getNombre()){
+        if(this.celda1.getProducto() != null && this.celda1.getProducto().getNombre() == productoEncontrado.getNombre()){
             this.celda1.setStock(this.celda1.getStock()-1);
             this.saldo +=productoEncontrado.getPrecio();
         }
 
-        if(productoEncontrado != null && this.celda2.getProducto().getNombre() == productoEncontrado.getNombre()){
+        if(this.celda2.getProducto() != null && this.celda2.getProducto().getNombre() == productoEncontrado.getNombre()){
             this.celda2.setStock(this.celda2.getStock()-1);
             this.saldo +=productoEncontrado.getPrecio();
         }
 
-        if(productoEncontrado != null && this.celda3.getProducto().getNombre() == productoEncontrado.getNombre()){
+        if(this.celda3.getProducto() != null && this.celda3.getProducto().getNombre() == productoEncontrado.getNombre()){
             this.celda3.setStock(this.celda3.getStock()-1);
             this.saldo +=productoEncontrado.getPrecio();
         }
 
-        if(productoEncontrado != null && this.celda4.getProducto().getNombre() == productoEncontrado.getNombre()){
+        if(this.celda4.getProducto() != null && this.celda4.getProducto().getNombre() == productoEncontrado.getNombre()){
             this.celda4.setStock(this.celda4.getStock()-1);
             this.saldo +=productoEncontrado.getPrecio();
         }
 
-        mostrarProductos();
+        //mostrarProductos();
     }
 
     public double venderConCambio (String codigo, int valor){
