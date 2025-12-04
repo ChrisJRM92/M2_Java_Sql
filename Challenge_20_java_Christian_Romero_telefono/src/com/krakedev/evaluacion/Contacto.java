@@ -49,8 +49,13 @@ public class Contacto {
         System.out.println("Nombre: "+this.nombre);
         System.out.println("Apellido: "+this.apellido);
         System.out.println("Direccion: ");
-        System.out.println("   Calle principal: "+direccion.getCallePrincipal());
-        System.out.println("   Calle secundaria: "+direccion.getCalleSecundaria());
+        if(direccion != null && direccion != null){
+            System.out.println("   Calle principal: "+direccion.getCallePrincipal());
+            System.out.println("   Calle secundaria: "+direccion.getCalleSecundaria());
+        }else {
+            System.out.println("   No tiene asociada una direccion");
+        }
+
 
     }
 }
