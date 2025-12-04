@@ -1,5 +1,6 @@
 package com.krakedev.evaluacion;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -16,6 +17,7 @@ public class Directorio {
             return false;
         }
         this.contactos.add(contacto);
+        this.fechaModificacion = new Date();
         return true;
     }
 
@@ -28,5 +30,23 @@ public class Directorio {
             }
         }
         return null;
+    }
+
+    public String consultarUltimaModificacion(){
+        if (this.fechaModificacion == null) {
+            return null;
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        return sdf.format(this.fechaModificacion);
+    }
+
+    public int contarPerdidos(){
+        int perdidos = 0;
+        for(Contacto c: contactos){
+            if(c.getDireccion()==null){
+                perdidos+=1;
+            }
+        }
+        return perdidos;
     }
 }
