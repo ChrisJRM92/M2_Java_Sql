@@ -7,6 +7,8 @@ import java.util.Date;
 public class Directorio {
     private ArrayList<Contacto> contactos = new ArrayList<>();
     private Date fechaModificacion;
+    private ArrayList<Contacto> correctos = new ArrayList<>();
+    private ArrayList<Contacto> incorrectos = new ArrayList<>();
 
     public Directorio() {
         this.contactos = new ArrayList<>();
@@ -48,5 +50,18 @@ public class Directorio {
             }
         }
         return perdidos;
+    }
+
+    public int contarFijos(){
+        int numerosFijos = 0;
+        for(Contacto f: contactos){
+            for(Telefono t: f.getTelefonos()){
+                if("C".equals(t.getEstado()) && "Convencional".equals(t.getTipo())){
+                    numerosFijos++;
+
+                }
+            }
+        }
+        return numerosFijos;
     }
 }
