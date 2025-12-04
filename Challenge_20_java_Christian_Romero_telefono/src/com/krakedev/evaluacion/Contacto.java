@@ -1,9 +1,12 @@
 package com.krakedev.evaluacion;
 
+import java.util.ArrayList;
+
 public class Contacto {
     private String cedula;
     private String nombre;
     private String apellido;
+    private ArrayList<Telefono> telefonos = new ArrayList<>();
     private Direccion direccion;
 
     public Contacto(String cedula, String nombre, String apellido) {
@@ -44,6 +47,14 @@ public class Contacto {
         this.direccion = direccion;
     }
 
+    public ArrayList<Telefono> getTelefonos() {
+        return telefonos;
+    }
+
+    public void setTelefonos(ArrayList<Telefono> telefonos) {
+        this.telefonos = telefonos;
+    }
+
     public void imprimir(){
         System.out.println("Cedula: "+this.cedula);
         System.out.println("Nombre: "+this.nombre);
@@ -55,7 +66,33 @@ public class Contacto {
         }else {
             System.out.println("   No tiene asociada una direccion");
         }
+    }
 
+    public void agregarTelefono(Telefono telefono){
+            this.telefonos.add(telefono);
+    }
 
+    public void mostrarTelefonos(){
+        if(telefonos.size() >= 0){
+            System.out.println("Telefonos con estado 'C': ");
+            for (Telefono t: telefonos){
+                if(t.getEstado().equals("C")){
+                    System.out.println("Numero: "+t.getNumero()+", "+ "Tipp: "+t.getTipo());
+                }
+            }
+        }
+    }
+
+    public ArrayList<Telefono> recuperarIncorrectos(){
+        ArrayList<Telefono> incorrectos = new ArrayList<>();
+
+        if(telefonos.size()>=0){
+            for(Telefono t: telefonos){
+                if(t.getEstado().equals("E")){
+                    incorrectos.add(t);
+                }
+            }
+        }
+        return incorrectos;
     }
 }
