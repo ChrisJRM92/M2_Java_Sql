@@ -8,6 +8,9 @@ public class Directorio {
     private Date fechaModificacion;
 
     public boolean agregarContacto(Contacto contacto){
+        if (buscarPorCedula(contacto.getCedula()) != null) {
+            return false;
+        }
         this.contactos.add(contacto);
         return true;
     }
