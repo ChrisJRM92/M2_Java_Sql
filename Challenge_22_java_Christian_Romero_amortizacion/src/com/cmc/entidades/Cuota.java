@@ -65,7 +65,12 @@ public class Cuota {
 
     public void mostrarPrestamo(){
         Utilitario utilitario = new Utilitario();
+        this.cuota = utilitario.redondear(this.cuota);
+        this.capital = utilitario.redondear(this.capital);
+        this.inicio = utilitario.redondear(this.inicio);
+        this.interes = utilitario.redondear(this.interes);
         this.abonoDeCapital= utilitario.redondear(this.abonoDeCapital);
-        System.out.println(this.numero+" | "+this.cuota+" | "+this.capital+" | "+this.interes+" | "+this.abonoDeCapital+" | "+this.saldo);
+        this.saldo = utilitario.redondear(this.saldo);
+        System.out.println(this.numero+" | "+this.cuota+" | "+this.inicio+" | "+this.interes+" | "+this.abonoDeCapital+" | "+this.saldo);
     }
 }
