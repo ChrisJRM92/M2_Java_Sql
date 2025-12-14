@@ -1,4 +1,4 @@
-package com.clases;
+package com.clases.animal;
 
 public class Gato extends Animal {
 
