@@ -27,3 +27,55 @@ CREATE TABLE proyecto_municipio (
 );
 
 --Agregar la Data.sql antes de las sigueintes consultas
+--=============
+--CONSULTA 1
+--=============
+--Consulta
+select municipio.nombre, proyecto.proyecto from municipio, proyecto, proyecto_municipio
+where municipio.id=proyecto_municipio.municipio_id
+and proyecto.id=proyecto_municipio.proyecto_id;
+
+--Subconsulta
+select proyecto from proyecto
+where id in(
+	select proyecto_id from proyecto_municipio
+	where municipio_id=1
+);
+
+--Agregacion
+select municipio.nombre, count(proyecto_municipio.proyecto_id) from municipio, proyecto_municipio
+where municipio.id=proyecto_municipio.municipio_id
+group by municipio.nombre;
+
+--=============
+--CONSULTA 2
+--=============
+--Consulta
+select municipio.nombre, proyecto.proyecto from municipio, proyecto, proyecto_municipio
+where municipio.id=proyecto_municipio.municipio_id
+and proyecto.id=proyecto_municipio.proyecto_id
+and municipio.nombre like '%GAD%';
+
+--Agregacion
+select municipio.nombre, min(proyecto_municipio.proyecto_id) from municipio, proyecto_municipio
+where municipio.id=proyecto_municipio.municipio_id
+group by municipio.nombre;
+
+--=============
+--CONSULTA 3
+--=============
+--Consulta
+select municipio.nombre, ciudad.nombre from municipio, ciudad
+where municipio.ciudad_id=ciudad.id;
+
+--Subconsulta
+select proyecto from proyecto
+where id in(
+	select proyecto_id from proyecto_municipio
+	where municipio_id=3
+);
+
+--Agregacion
+select municipio.nombre, max(proyecto_municipio.proyecto_id) from municipio, proyecto_municipio
+where municipio.id=proyecto_municipio.municipio_id
+group by municipio.nombre;
