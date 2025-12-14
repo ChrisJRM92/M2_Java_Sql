@@ -25,3 +25,5 @@ CREATE TABLE reservas (
     FOREIGN KEY (habitacion) REFERENCES habitaciones(habitacion_numero),
     FOREIGN KEY (huesped_id) REFERENCES huespedes(id)
 );
+
+--Agregar la Data.sql antes de las sigueintes consultas

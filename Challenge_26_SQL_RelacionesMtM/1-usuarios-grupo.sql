@@ -19,3 +19,5 @@ CREATE TABLE usuario_grupo (
     FOREIGN KEY (us_id) REFERENCES usuarios(id),
     FOREIGN KEY (gr_id) REFERENCES grupo(id)
 );
+
+--Agregar la Data.sql antes de las sigueintes consultas

@@ -26,3 +26,4 @@ CREATE TABLE proyecto_municipio (
     CONSTRAINT municipio_fk FOREIGN KEY (municipio_id) REFERENCES municipio(id)
 );
 
+--Agregar la Data.sql antes de las sigueintes consultas
