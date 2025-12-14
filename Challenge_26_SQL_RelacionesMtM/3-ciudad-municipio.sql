@@ -7,7 +7,6 @@ create table municipio(
     id int PRIMARY KEY,
     nombre varchar(45),
     ciudad_id int,
-    CONSTRAINT municipio_pk PRIMARY KEY(id),
     CONSTRAINT ciudad_fk FOREIGN KEY (ciudad_id) REFERENCES ciudad(id)
 );
 
