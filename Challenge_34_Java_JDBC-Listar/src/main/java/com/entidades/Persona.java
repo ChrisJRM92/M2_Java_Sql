@@ -1,0 +1,121 @@
+package com.entidades;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class Persona {
+    private String cedula;
+    private String nombre;
+    private String apellido;
+    private double estatura;
+    private Date fechaNacimiento;
+    private Date horaNacimiento;
+    private BigDecimal cantidadAhorrada;
+    //En base de datos es relaciones pero en JAVA es composicion de objetos
+    private EstadoCivil estadoCivil;
+    private int numeroHijos;
+
+    public Persona(){
+
+    }
+
+    //No es necesario el contructor en entidades pero se lo usa en este ejemplo
+    public Persona(String cedula, String nombre, String apellido, double estatura, Date fechaNacimiento, Date horaNacimiento, BigDecimal cantidadAhorrada, EstadoCivil estadoCivil, int numeroHijos) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.estatura = estatura;
+        this.fechaNacimiento = fechaNacimiento;
+        this.horaNacimiento = horaNacimiento;
+        this.cantidadAhorrada = cantidadAhorrada;
+        this.estadoCivil = estadoCivil;
+        this.numeroHijos = numeroHijos;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public long getEstatura() {
+        return (long) estatura;
+    }
+
+    public void setEstatura(double estatura) {
+        this.estatura = estatura;
+    }
+
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public Date getHoraNacimiento() {
+        return horaNacimiento;
+    }
+
+    public void setHoraNacimiento(Date horaNacimiento) {
+        this.horaNacimiento = horaNacimiento;
+    }
+
+    public BigDecimal getCantidadAhorrada() {
+        return cantidadAhorrada;
+    }
+
+    public void setCantidadAhorrada(BigDecimal cantidadAhorrada) {
+        this.cantidadAhorrada = cantidadAhorrada;
+    }
+
+    public EstadoCivil getEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public void setEstadoCivil(EstadoCivil estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }
+
+    public int getNumeroHijos() {
+        return numeroHijos;
+    }
+
+    public void setNumeroHijos(int numeroHijos) {
+        this.numeroHijos = numeroHijos;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "cedula='" + cedula + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", estatura=" + estatura +
+                ", fechaNacimiento=" + fechaNacimiento +
+                ", horaNacimiento=" + horaNacimiento +
+                ", cantidadAhorrada=" + cantidadAhorrada +
+                ", estadoCivil=" + estadoCivil +
+                ", numeroHijos=" + numeroHijos +
+                '}';
+    }
+}
