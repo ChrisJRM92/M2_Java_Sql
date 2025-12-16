@@ -1,4 +1,6 @@
 --Primero crear la base de datos para empezar a operar
+create database javasql
+
 CREATE TABLE estado_civil(
     codigo char(1) PRIMARY KEY NOT NULL,
     descripcion varchar(20) NOT NULL
