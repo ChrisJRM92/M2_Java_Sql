@@ -7,8 +7,8 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Time;
 
-public class TestAdminPersona {
-    public static void main(String[] args) {
+public class TestCrear {
+    public static void main(String[] args) throws Exception {
         EstadoCivil ec = new EstadoCivil("U", "Union Libre");
         Persona p = new Persona(
                 "0705933588",
@@ -22,5 +22,6 @@ public class TestAdminPersona {
                 2
         );
         AdminPersonas.insertarRegistro(p);
+        System.out.println("Persona creada correctamente");
     }
 }
