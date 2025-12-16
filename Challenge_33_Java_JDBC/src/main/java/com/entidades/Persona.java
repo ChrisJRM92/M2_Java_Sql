@@ -56,8 +56,8 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    public double getEstatura() {
-        return estatura;
+    public long getEstatura() {
+        return (long) estatura;
     }
 
     public void setEstatura(double estatura) {
