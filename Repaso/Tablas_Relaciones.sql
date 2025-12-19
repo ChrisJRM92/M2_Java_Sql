@@ -4,6 +4,10 @@ drop table if exist historial_movimientos;
 drop table if exist productos;
 drop table if exist categorias;
 
+drop table historial_movimientos;
+drop table productos;
+drop table categorias;
+
 --En postgres el autoincrement es SERIAL.
 CREATE TABLE categorias(
     id SERIAL PRIMARY KEY,

@@ -1,0 +1,19 @@
+2025-12-19 15:55:50,910 [main] DEBUG com.krakedev.evaluacion.utils.ConexionBDD - obteniendo conexion
+2025-12-19 15:55:51,487 [main] ERROR com.krakedev.evaluacion.utils.ConexionBDD - Error al conectar a la base de datos
+org.postgresql.util.PSQLException: FATAL: la autentificaci�n password fall� para el usuario �postgres�
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:698) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:207) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:262) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.Driver.makeConnection(Driver.java:446) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.3.jar:42.7.3]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at com.krakedev.evaluacion.utils.ConexionBDD.conectar(ConexionBDD.java:24) [classes/:?]
+	at com.krakedev.evaluacion.test.TestConexionBDD.main(TestConexionBDD.java:9) [classes/:?]
+2025-12-19 15:56:50,941 [main] DEBUG com.krakedev.evaluacion.utils.ConexionBDD - obteniendo conexion
+2025-12-19 16:12:39,964 [main] DEBUG com.krakedev.evaluacion.utils.ConexionBDD - obteniendo conexion
+2025-12-19 16:18:32,272 [main] DEBUG com.krakedev.evaluacion.utils.ConexionBDD - obteniendo conexion
+2025-12-19 16:23:27,283 [main] DEBUG com.krakedev.evaluacion.utils.ConexionBDD - obteniendo conexion
+2025-12-19 16:27:18,218 [main] DEBUG com.krakedev.evaluacion.utils.ConexionBDD - obteniendo conexion
